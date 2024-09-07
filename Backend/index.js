@@ -8,7 +8,7 @@ const app = express();
 
 // Tackling CORS with detailed headers
 const corsOptions = {
-  origin: 'https://make-notes-mu.vercel.app',
+  origin: ["https://make-notes-mu.vercel.app"],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Authorization'],
   credentials: true,
