@@ -8,7 +8,7 @@ const noteRouter = require("./app/routes/note_routes");
 const app = express();
 //Tackling cors
 const corsOptions = {
-  origin: "*",
+  origin: 'https://make-notes-mu.vercel.app',
   methods: "GET , POST, PUT, DELETE",
   credentials: true,
 };
