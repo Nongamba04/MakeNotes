@@ -1,7 +1,7 @@
 const express = require("express");
-const bodyParser = require("body-parser");
 //Cors Is a middleware used to fix the cors policy error
 const cors = require("cors");
+const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const noteRouter = require("./app/routes/note_routes");
 
@@ -9,7 +9,7 @@ const app = express();
 //Tackling cors
 const corsOptions = {
   origin: 'https://make-notes-mu.vercel.app',
-  methods: "GET , POST, PUT, DELETE",
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
 };
 app.use(cors(corsOptions));
