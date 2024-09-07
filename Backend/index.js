@@ -12,7 +12,7 @@ const corsOptions = {
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
 };
-app.use(cors(corsOptions));
+app.use(cors());
 
 // Additional CORS headers middleware
 app.use((req, res, next) => {
