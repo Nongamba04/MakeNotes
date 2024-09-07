@@ -41,7 +41,11 @@ const uri = "mongodb://nghackercoc3:Nongamba21122004@db-shard-00-00.djjbr.mongod
 
 // Connect to MongoDB
 mongoose
-  .connect(uri)
+  .connect(uri,{
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    serverSelectionTimeoutMS: 30000 
+  })
   .then(() => {
     console.log("Connected to MongoDB");
   })
