@@ -10,9 +10,6 @@ app.use(bodyParser.json());
 app.get("/",(req,res)=>{
   res.json("Hello");
 })
-app.get("/api/notes",(req,res)=>{
-  res.json("Hello");
-})
 
 app.post("/api/notes", async (req, res) => {
   try {
