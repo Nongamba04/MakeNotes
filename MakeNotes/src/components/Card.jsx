@@ -52,7 +52,7 @@ export default function Card({ title, text,id,onDelete}) {
     event.preventDefault(); // Prevent default form submission
 
     try {
-      const res = await axios.put("https://make-notes-api.vercel.app/api/notes", newNote, {
+      const res = await axios.put("https://make-notes-api.vercel.app/api", newNote, {
         headers: {
           'Content-Type': 'application/json',
         },

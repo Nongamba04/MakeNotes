@@ -11,7 +11,7 @@ app.get("/",(req,res)=>{
   res.json("Hello");
 })
 
-app.post("/api/notes", async (req, res) => {
+app.post("/api", async (req, res) => {
   try {
     const note = new noteModel(req.body); // Use singular form for clarity
     await note.save(); // Save the note to the database
@@ -21,7 +21,7 @@ app.post("/api/notes", async (req, res) => {
   }
 });
 
-app.get("/api/notes", async (req, res) => {
+app.get("/api", async (req, res) => {
   try {
     const notes = await noteModel.find(); // Retrieve all notes from the database
     res.status(200).json(notes); // Send the notes with a 200 status code
@@ -30,7 +30,7 @@ app.get("/api/notes", async (req, res) => {
   }
 });
 
-app.put("/api/notes", async (req, res) => {
+app.put("/api", async (req, res) => {
   try {
     const { id, title, text } = req.body; // Destructure id, title, and text from req.body
 
@@ -53,7 +53,7 @@ app.put("/api/notes", async (req, res) => {
   }
 });
 
-app.delete("/api/notes/:id", async (req,res)=> {
+app.delete("/api/:id", async (req,res)=> {
     try {
       const {id} = req.params
 
