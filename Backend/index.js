@@ -13,8 +13,21 @@ const corsOptions = {
   credentials: true,
 };
 app.use(cors(corsOptions));
+
+// Additional CORS headers middleware
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "https://make-notes-mu.vercel.app");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+  res.header("Access-Control-Allow-Credentials", "true");
+  if (req.method === "OPTIONS") {
+    return res.status(200).json({});
+  }
+  next();
+});
 // Unfortunately, Express can’t process URL encoded forms on its own. But you did install that body-parser package…
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 // MongoDB connection string
 const uri =
   "mongodb://nghackercoc3:Nongamba21122004@db-shard-00-00.djjbr.mongodb.net:27017,db-shard-00-01.djjbr.mongodb.net:27017,db-shard-00-02.djjbr.mongodb.net:27017/?ssl=true&replicaSet=atlas-glom09-shard-0&authSource=admin&retryWrites=true&w=majority&appName=DB";
