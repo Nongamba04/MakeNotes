@@ -2,6 +2,11 @@
 
 MakeNotes is a note-taking application built using the MERN stack (MongoDB, Express.js, React.js, Node.js) with Tailwind CSS for styling. It allows users to add, update, and delete notes with a simple and minimal design that is easy to use and responsive.
 
+![image](https://github.com/user-attachments/assets/bca40192-8633-43b2-a029-f56e6a0aa027)
+
+![image](https://github.com/user-attachments/assets/1ae66349-61b0-4ab4-8049-4e1e97fe1479)
+
+
 ## Features
 
 - **Add Notes**: Users can easily add notes with a title and text content.
