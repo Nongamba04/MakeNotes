@@ -7,6 +7,10 @@ const app = express();
 // Middleware to parse JSON requests
 app.use(bodyParser.json());
 
+app.get("/",(req,res)=>{
+  res.json("Hello");
+})
+
 app.post("/api/notes", async (req, res) => {
   try {
     const note = new noteModel(req.body); // Use singular form for clarity
