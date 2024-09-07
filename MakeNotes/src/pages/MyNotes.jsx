@@ -67,7 +67,7 @@ export default function MyNotes() {
 
   const fetchNotes =async ()=>{
     
-      axios.get("http://localhost:5000/api/notes").then(
+      axios.get("https://make-notes-api.vercel.app/api/notes").then(
         res => {
           if(!res.data || res.data.length === 0){
             setItems([])
@@ -95,7 +95,7 @@ export default function MyNotes() {
 
   async function handleDelete(id){
     try {
-      const res = await axios.delete(`http://localhost:5000/api/notes/${id}`);
+      const res = await axios.delete(`https://make-notes-api.vercel.app/api/notes/${id}`);
       console.log("Note Deleted successfully:", res.data);
       toast.success('📃 Note Deleted Successfully!',toastOptionsSuccess);  // Log the successful update
       fetchNotes();

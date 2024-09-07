@@ -44,7 +44,7 @@ export default function TextCard() {
     console.log(note);
 
     try {
-      const res = await fetch("http://localhost:5000/api/notes", {
+      const res = await fetch("https://make-notes-api.vercel.app/api/notes", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
